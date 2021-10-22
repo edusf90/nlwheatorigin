@@ -23,40 +23,37 @@
             alt="Foto Pessoal"
           />
         </div>
-        <h1>Edu Santana</h1>
+        <h1 id="userName">Edu Santana</h1>
         <a target="blank" href="https://www.github.com/edusf90/">
           <img src="images/github.svg" alt="Ícone GitHub" />
           edusf90</a
         >
         <p>Um desenvolvedor web em busca da sua primeira oportunidade.</p>
-        <ul>
+        <ul id="socialLinks">
           <!-- Ícone do YouTube -->
-          <li>
-            <a
-              target="blank"
-              href="https://www.youtube.com/channel/UCLIggKJorTIMQFpbVc0Y1nQ"
-            >
+          <li class="youtube">
+            <a target="blank" href="https://www.youtube.com/uol">
               <img src="images/youtube.svg" alt="Ícone Youtube" />
             </a>
           </li>
           <!-- Fim -->
           <!-- Ícone do FaceBook -->
-          <li>
-            <a target="blank" href="https://www.facebook.com/edusf.90/">
+          <li class="facebook">
+            <a target="blank" href="https://www.facebook.com/uol/">
               <img src="images/facebook.svg" alt="Ícone Facebook" />
             </a>
           </li>
           <!-- Fim -->
           <!-- Ícone do Instagram -->
-          <li>
-            <a target="blank" href="https://www.instagram.com/edusf90/">
+          <li class="instagram">
+            <a target="blank" href="https://www.instagram.com/uol/">
               <img src="images/instagram.svg" alt="Ícone Instagram" />
             </a>
           </li>
           <!-- Fim -->
           <!-- Ícone do Twitter -->
-          <li>
-            <a target="blank" href="https://twitter.com/edusf90">
+          <li class="twitter">
+            <a target="blank" href="https://twitter.com/uol">
               <img src="images/twitter.svg" alt="Ícone Twitter" />
             </a>
           </li>
@@ -65,15 +62,22 @@
       </div>
     </main>
     <script>
-      const github = 'edusf90'
-      const youtube = 'channel/UCLIggKJorTIMQFpbVc0Y1nQ'
-      const facebook = 'edusf.90'
-      const instagram = 'edusf90'
-      const twitter = 'edusf90'
-
-      function showMeSomething() {
-        alert('Oi estou aqui')
+      const linksSocialMedia = {
+        github: 'edusf90',
+        youtube: 'channel/UCLIggKJorTIMQFpbVc0Y1nQ',
+        facebook: 'edusf.90',
+        instagram: 'edusf90',
+        twitter: 'edusf90'
       }
+
+      function changeSocialMedia() {
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+          li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
+        }
+      }
+
+      changeSocialMedia()
     </script>
   </body>
 </html>
